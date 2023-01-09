@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const PORT = 8080
-const artiste = {
+const artist = {
     "lil wayne":{
         "birthName": "Dwayne Michael Carter",
         "age": 40,
@@ -43,7 +43,7 @@ app.get('/', (req,res)=>{
 
 app.get('/api/:name', (req,res)=>{
     const artistebName = req.params.name.toLowerCase()
-  if(artiste[artistebName]){
+  if(artist[artistebName]){
     res.json(artiste[artistebName])
   }else {
     res.json('unknown')
@@ -51,6 +51,6 @@ app.get('/api/:name', (req,res)=>{
     
 })
 
-app.listen(PORT, ()=>{
+app.listen(PORT , ()=>{
     console.log("Listening on 8080")
 })
